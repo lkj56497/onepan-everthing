@@ -28,8 +28,7 @@ pwa='''<meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="원팬요리의 모든것">
-<meta name="theme-color" content="#EEF1EF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141918" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F6C42A">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" href="icon-192.png">
 <link rel="manifest" href="manifest.webmanifest">

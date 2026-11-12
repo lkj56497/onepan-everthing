@@ -5,8 +5,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="원팬요리의 모든것">
-<meta name="theme-color" content="#EEF1EF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141918" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F6C42A">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" href="icon-192.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -18,17 +17,13 @@
 <style>
 /* Layout: 한 화면 앱 — 위에 냉장고(재료 칩), 아래에 요리 가능한 레시피 목록, 탭하면 전체화면 레시피 */
 :root{
-  --bg:#EEF1EF; --surface:#FFFFFF; --fg:#1B2220; --muted:#5E6B67; --line:#D6DDDA;
-  --yolk:#F2B705; --yolk-ink:#2A2100; --pepper:#C2361F; --leaf:#2E7D4F; --chip:#E3E8E6;
+  /* 앱 안은 노란 바탕, 나머지(카드·칸·버튼)는 흰색. 휴대폰이 어두운 화면이어도 같은 색으로 보인다 */
+  --bg:#F6C42A; --surface:#FFFFFF; --fg:#1B2220; --muted:#5A4B17; --line:#E9DDB8;
+  --yolk:#F2B705; --yolk-ink:#2A2100; --pepper:#C2361F; --leaf:#2E7D4F; --chip:#FFFFFF;
   --display:"Black Han Sans","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  color-scheme:light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#141918; --surface:#1E2523; --fg:#ECF0EE; --muted:#9AA6A2; --line:#2F3936;
-  --yolk:#F5C02A; --yolk-ink:#231B00; --pepper:#F0735C; --leaf:#5CC28A; --chip:#27302E; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#141918; --surface:#1E2523; --fg:#ECF0EE; --muted:#9AA6A2; --line:#2F3936;
-  --yolk:#F5C02A; --yolk-ink:#231B00; --pepper:#F0735C; --leaf:#5CC28A; --chip:#27302E; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 120px}
@@ -210,6 +205,19 @@ header{display:block}
 .sim{display:grid;gap:8px}
 .fnote{font-size:12px;color:var(--muted);margin:0 auto 6px;max-width:520px;line-height:1.5}
 .card .meta{display:block}
+.seg{border:1px solid var(--line)}
+.seg button[aria-selected="true"]{background:var(--bg);color:var(--fg)}
+.tm{background:var(--bg)}
+.chip{border-color:var(--line)}
+.group .chips .chip:not([aria-pressed="true"]){background:#FFF8E1}
+.pl,.pb{background:#FFF8E1}
+.mtog{background:var(--surface);border:1px solid var(--line)}
+.mtog button[aria-pressed=true]{background:var(--bg)}
+.thumb,.hero{background:#FFF3CC}
+.who .wb .av{box-shadow:0 0 0 2px var(--bg),0 0 0 3px var(--surface)}
+.who .wb[aria-pressed="true"] .av{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--fg)}
+.ostrip{border-top-color:var(--fg)}
+.soon{border-color:var(--yolk-ink)}
 .soon{background:var(--surface);border:1px dashed var(--line);border-radius:14px;padding:18px 16px;text-align:center;color:var(--muted);font-size:14px;line-height:1.6}
 .soon b{display:block;color:var(--fg);font-size:16px;margin-bottom:4px}
 </style>
