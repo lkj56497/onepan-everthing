@@ -16,3 +16,7 @@
 
 ## 버전
 - 1.0 (버전번호 1): 첫 출시. 버전번호는 매번 1씩 올린다. 서명 키는 uber-apk-signer 기본 디버그 키를 계속 쓴다.
+
+## 올리기
+- 깃허브 저장소: lkj56497/onepan-everthing. 사이트는 gh-pages 브랜치에서 나온다.
+- 고친 뒤 `git push origin main` 과 `git push origin main:gh-pages` 를 둘 다 한다. 1~3분 뒤 https://lkj56497.github.io/onepan-everthing/install.html 에서 확인.
